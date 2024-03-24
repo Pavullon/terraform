@@ -1,0 +1,29 @@
+#cloud-config
+
+#users:
+#  - name: ansible
+#    gecos: Ansible User
+#    groups: users,admin,sudo
+#    sudo: ALL=(ALL) NOPASSWD:ALL
+#    shell: /bin/bash
+#    passwd: $6$rounds=4096$PTxfuM.S7YchhFaa$.SeQFV1wfMjHSc6IMEywQWOz89tuRd60WLZfanZGIUioHjuVVrSssZFTTMotz6LbOyVMqvmvTr38upju2KwOZ/
+#    
+#    #ssh_authorized_keys:
+#    #  - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCw7NV7BQLUGT/s8nWhrufU7O50Dp6pTmpNGAM7xJ0njMFK5OMAQjfzkbRaEaqLhXZ0zcHswZ3chZg/BFik4pkQ+0sN3F0f2jCwVhLAYoiLY2aciRTsQwLaI+DRP6AKNJ96UP/LF0Ga4W/mCu1m4BXkXkVtylreCQhFrIXG+8CGgDYABBc6W39U8DgQ+AODRzK79I9cWRZT0gMQ0Rl/UGH+xBo8UudFYst3Wc7GuylroY2CrIX/v9Gtj2Q2VOPVXnFgOOjKOg3yojo9w4rCosg7jDPukT9RZyFGyksCK9NF78NfedfY1vcwyZa/29BC+9hTcu9vJGmE1pfuv5UIUS+DvVcDG11rF6FrAAVZGQlZiW4iqLMcaRLJ850ILe9ettTjHzORt8/J3PUrAfmWPs8y4UKjwbU7OrZ/5OywSyA2EKC7L1dvh9xqzMFUvvera4v7o8hdUfrqfqxfFXt4kfPGMMnfa2+CvimlAEBbcA/PuTModkl0nrtyhEXPe+IJZpc= root@PG-PC-01
+
+
+ssh_pwauth: true
+disable_root: false
+chpasswd:
+  list: |
+     root:password
+  expire: false
+users:
+  - name: pawelgromala
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    groups: users, admin
+    home: /home/pawelgromala
+    shell: /bin/bash
+    lock_passwd: false
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCpbAfxl4+28JWOd6QV9xDDf89OVlEeABl5Xa2HA4W57YVh0Fr/yfG05numcQAir38ja+hlIfmMg5sQ5MYJ3uauWOK7iR16uFKbTGcktS1JSyoK7SiAFu/Fft0UgvoAEN8nweOLea3sCWSnHHB2zO0HfIt3/2Mui3+3zTd/1QC5vIC8UNLYQpX0/SV/t6TatTvE5sqPxN/Jqp7WT4JO6sD8JHq5NW2nJCbVK5MREMrkPzYd2FpV0hgyl2l18f/kXSaylM3FONzXuLtTv3S8HF7m7vALe3KHcWzBYYykSsGUDYCqA9xNMBVbuGDdhMB5c+GIxt9v/QlBaAwpxaJg46RVd3CkNoIqUYbDo0M3dUYEFlf+YvRXswXO4yIRT75g738TkcHRpTUB3R7F68aR5Mg2ukPNQvkLPxlNg0zjn+Mdy/rlr9eGidq5rWtJ8Oty5+JPiWp0NRdNUS/DNJA4k6jVnfFDmg85wGg8+vEW3Zq7iIjCmfXabwTSOydaHeUUuT0= pawelgromala@PG-PC-01
